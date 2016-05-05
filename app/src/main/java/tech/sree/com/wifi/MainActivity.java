@@ -92,26 +92,24 @@ public class MainActivity extends AppCompatActivity {
 
 
         switch (item.getItemId()) {
+
+            case R.id.action_help:
+                Intent intent_help = new Intent(this, OptionSelDialog.class);
+                intent_help.putExtra("data", getString(R.string.Help));
+                startActivity(intent_help);
+                return true;
+
             case R.id.action_about:
                 Intent intent = new Intent(this, OptionSelDialog.class);
-                intent.putExtra("data","This is About Application");
+                intent.putExtra("data",getString(R.string.About));
                 startActivity(intent);
-
                 return true;
-            //  break;
+
             case R.id.action_rate:
                 Intent intent_fb = new Intent(this, OptionSelDialog.class);
                 intent_fb.putExtra("data", "This is intent_fb  Application");
                 startActivity(intent_fb);
                 return true;
-            // break;
-            case R.id.action_help:
-                Intent intent_help = new Intent(this, OptionSelDialog.class);
-                intent_help.putExtra("data", getString(R.string.Help));
-                startActivity(intent_help);
-
-                return true;
-            // break;
             default:
                 return super.onOptionsItemSelected(item);
         }

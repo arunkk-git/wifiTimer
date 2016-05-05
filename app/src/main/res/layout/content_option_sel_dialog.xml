@@ -17,7 +17,7 @@
         android:id="@+id/Option"
         android:text="Dailog"
         android:textColor="#ee0cf5"
-        android:textAppearance="?android:textAppearanceLarge"
+        android:textAppearance="?android:textAppearanceMedium"
         android:layout_alignParentTop="true"
          />
 

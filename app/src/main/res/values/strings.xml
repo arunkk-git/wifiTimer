@@ -3,8 +3,13 @@
     <string name="title_activity_option_sel_dialog">OptionSelDialog</string>
     <string name="Help">
         This Application is Useful for controlling the use of mobile/internet by the Kids.
-        Parents can set the wifi OFF - ON time by pressing alarm icon.
-        Safe internet browsing :-)
+        Parents can set the wifi OFF-ON time by pressing alarm icon.
+        Wifi will be turned -off automatically by predefined time again turn On again .\n
+        Ideal time should be late night to turn-off  and  Morning is to turn-on.
+       \n Safe internet browsing :-)
+    </string>
+    <string name="About">
+        Please provide the feedback on \n sree.tech2016@gmail.com
     </string>
 
 </resources>
