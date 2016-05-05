@@ -20,8 +20,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".WifiController" />
-
         <activity android:name=".myTimer"></activity>
+        <activity
+            android:name=".OptionSelDialog"
+            android:label="@string/title_activity_option_sel_dialog"
+            android:theme="@style/Theme.AppCompat.Dialog"></activity>
     </application>
 
 </manifest>

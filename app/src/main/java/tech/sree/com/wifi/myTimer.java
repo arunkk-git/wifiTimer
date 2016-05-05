@@ -5,13 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 
 public class myTimer extends AppCompatActivity {
-    final String TIMER_INFO_ON_RESP = "TIMER_INFO_ON_RESP" ;
-    final int TIMER_INFO_ON_RSP_CODE = 2 ;
     TimePicker timerON ,timerOFF ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +24,7 @@ public class myTimer extends AppCompatActivity {
     public void getTimeData(View V){
         ArrayList<Integer> arrayList =  new ArrayList<Integer>();
         StringBuffer stringBuffer = new StringBuffer();
+        Calendar c = Calendar.getInstance();
 
         stringBuffer.append("timerOFF ");
         int hour = 0;
@@ -36,6 +36,10 @@ public class myTimer extends AppCompatActivity {
             hour = timerOFF.getCurrentHour();
             minute = timerOFF.getCurrentMinute();
         }
+        if (hour <= c.get(Calendar.HOUR ) && minute <= c.get(Calendar.MINUTE ) ){
+            Toast.makeText(this,"Set Proper Future Time !!!",Toast.LENGTH_LONG).show();
+        }
+
         arrayList.add(hour);
         arrayList.add(minute);
         stringBuffer.append("" + hour + ":" + minute);
@@ -49,16 +53,12 @@ public class myTimer extends AppCompatActivity {
             hour = timerON.getCurrentHour();
             minute = timerON.getCurrentMinute();
         }
+
+        if (hour < c.get(Calendar.HOUR ) && minute <= c.get(Calendar.MINUTE ) ){
+            Toast.makeText(this,"Set Proper Future Time !!!",Toast.LENGTH_LONG).show();
+        }
         arrayList.add(hour);
         arrayList.add(minute);
-
-        Calendar c = Calendar.getInstance();
-        int seconds = c.get(Calendar.SECOND);
-/*
-        Intent intent=new Intent();
-        intent.putIntegerArrayListExtra("TimeArray",arrayList);
-        setResult(5, intent);
-*/
         MainActivity.getInstance().setNewListViewInfo(arrayList);
         finish();
 

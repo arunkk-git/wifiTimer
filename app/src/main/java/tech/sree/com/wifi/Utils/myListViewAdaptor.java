@@ -76,7 +76,7 @@ public class myListViewAdaptor extends ArrayAdapter<String> {
                 Intent intent =  new Intent(context ,myTimer.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
-                Toast.makeText(context, "Button Clicked+" + position, Toast.LENGTH_LONG).show();
+          //      Toast.makeText(context, "Button Clicked+" + position, Toast.LENGTH_LONG).show();
             }
         });
         return row;

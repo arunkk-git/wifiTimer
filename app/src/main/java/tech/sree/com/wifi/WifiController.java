@@ -26,8 +26,8 @@ public class WifiController extends AppCompatActivity {
 
         if (bundle != null) {
             resp1 = bundle.getString("ON");
-            Toast.makeText(this, "ON response = " + resp1, Toast.LENGTH_LONG).show();
-            Log.d("ARUNK", "ON response = " + resp1);
+//            Toast.makeText(this, "ON response = " + resp1, Toast.LENGTH_LONG).show();
+//            Log.d("ARUNK", "ON response = " + resp1);
 
             if (resp1.equals(WIFI_ON)) {
                 Log.d("ARUNKK", " WIFI COntrol ON ");
@@ -46,9 +46,9 @@ public class WifiController extends AppCompatActivity {
         if (status != wifiManager.isWifiEnabled()) {
             wifiManager.setWifiEnabled(status);
        }
-        boolean wifi  = wifiManager.isWifiEnabled();
-        Toast.makeText(this, "FInall Wifi Status : "+ wifi , Toast.LENGTH_LONG).show();
-        Log.d("ARUNKK","FInall Wifi Status : "+ wifi);
+//        boolean wifi  = wifiManager.isWifiEnabled();
+//        Toast.makeText(this, "FInall Wifi Status : "+ wifi , Toast.LENGTH_LONG).show();
+//        Log.d("ARUNKK","FInall Wifi Status : "+ wifi);
     }
 
 }

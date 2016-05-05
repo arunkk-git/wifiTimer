@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="tech.sree.com.mobiads.MainActivity">
+    <item
+
+        android:id="@+id/action_help"
+
+        android:title="Help"
+        android:icon="@drawable/wifi0"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_about"
+        android:title="About"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_rate"
+        android:title="Rate Me!!!"
+        app:showAsAction="never" />
+</menu>

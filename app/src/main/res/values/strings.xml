@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">wifi</string>
+    <string name="title_activity_option_sel_dialog">OptionSelDialog</string>
+    <string name="Help">
+        This Application is Useful for controlling the use of mobile/internet by the Kids.
+        Parents can set the wifi OFF - ON time by pressing alarm icon.
+        Safe internet browsing :-)
+    </string>
 
 </resources>
