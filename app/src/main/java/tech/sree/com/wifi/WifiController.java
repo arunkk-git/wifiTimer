@@ -1,16 +1,14 @@
 package tech.sree.com.wifi;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.wifi.WifiManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.Toast;
 
 public class WifiController extends AppCompatActivity {
 
-    WifiManager wifiManager;
+    static WifiManager wifiManager;
     final String WIFI_ON  = "Enable_Wifi_Control";
     final String WIFI_OFF  = "Disable_Wifi_Control";
 
@@ -26,9 +24,6 @@ public class WifiController extends AppCompatActivity {
 
         if (bundle != null) {
             resp1 = bundle.getString("ON");
-//            Toast.makeText(this, "ON response = " + resp1, Toast.LENGTH_LONG).show();
-//            Log.d("ARUNK", "ON response = " + resp1);
-
             if (resp1.equals(WIFI_ON)) {
                 Log.d("ARUNKK", " WIFI COntrol ON ");
                 toggleWiFi(false);
@@ -42,14 +37,12 @@ public class WifiController extends AppCompatActivity {
 
     }
     public void toggleWiFi(boolean status) {
-
         if (status != wifiManager.isWifiEnabled()) {
             wifiManager.setWifiEnabled(status);
        }
-//        boolean wifi  = wifiManager.isWifiEnabled();
-//        Toast.makeText(this, "FInall Wifi Status : "+ wifi , Toast.LENGTH_LONG).show();
-//        Log.d("ARUNKK","FInall Wifi Status : "+ wifi);
     }
+
+
 
 }
 

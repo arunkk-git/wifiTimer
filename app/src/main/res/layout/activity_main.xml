@@ -6,12 +6,37 @@
     android:background="#FFF"
     tools:context="tech.sree.com.wifi.MainActivity">
 
-<ListView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/listview">
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/wifilock"
+        android:onClick="setLockPassword"
+        android:id="@+id/wifi_pass_lock"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/wifi_pass_unlock"
+        android:layout_toStartOf="@+id/wifi_pass_unlock"
+        android:layout_marginRight="26dp"
+        android:layout_marginEnd="26dp" />
+    <ImageButton
+        android:onClick="setLockPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/wifi_pass_unlock"
+        android:src="@drawable/wifiunlock"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="70dp"
+        android:layout_marginEnd="70dp" />
+
+    <ListView
+        android:layout_below="@+id/wifi_pass_lock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listview">
 
 
-</ListView>
+    </ListView>
+
 
 </RelativeLayout>

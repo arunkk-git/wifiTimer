@@ -20,8 +20,11 @@ public class myTimer extends AppCompatActivity {
         timerON = (TimePicker) findViewById(R.id.wifiON);
         timerOFF = (TimePicker) findViewById(R.id.wifiOFF);
     }
-
     public void getTimeData(View V){
+        getAlarmTimeInfo();
+    }
+
+    public void getAlarmTimeInfo(){
         ArrayList<Integer> arrayList =  new ArrayList<Integer>();
         StringBuffer stringBuffer = new StringBuffer();
         Calendar c = Calendar.getInstance();

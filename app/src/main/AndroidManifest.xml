@@ -19,7 +19,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".WifiController" />
+
+        <receiver android:name=".WifiStatusChangeNotifier"  android:enabled="true">
+        <intent-filter>
+            <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+        </intent-filter>
+        </receiver>
+
+        <activity android:name=".WifiController"></activity>
+
         <activity android:name=".myTimer"></activity>
         <activity
             android:name=".OptionSelDialog"

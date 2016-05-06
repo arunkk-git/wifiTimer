@@ -10,11 +10,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -67,7 +65,18 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(adaptor);
     }
 
+    private ArrayList<Integer> OffOnTime;
+    public  ArrayList<Integer> getOffOnTime() {
+
+        return  OffOnTime ;
+    }
+    private void setOffOnTime(ArrayList<Integer> offONTime) {
+
+        OffOnTime = offONTime ;
+
+    }
     public void setNewListViewInfo(ArrayList<Integer> arrayList) {
+        setOffOnTime(arrayList);
         View v = listView.getChildAt(0 -
                 listView.getFirstVisiblePosition());
         ImageButton alaram = (ImageButton) findViewById(R.id.alaram);
@@ -81,6 +90,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+   public void setLockPassword(View V){
+       if(V.getId() ==  R.id.wifi_pass_lock){
+
+       }
+
+       if(V.getId() ==  R.id.wifi_pass_unlock){
+
+       }
+
+   }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -108,11 +127,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             case R.id.action_rate:
-                /*
-                Intent intent_fb = new Intent(this, OptionSelDialog.class);
-                intent_fb.putExtra("data", "This is intent_fb  Application");
-                startActivity(intent_fb);
-*/
+
                 Uri uri = Uri.parse("market://details?id=" + this.getPackageName());
                 Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
                 // To count with Play market backstack, After pressing back button,
