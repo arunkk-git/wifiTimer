@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">wifi</string>
+    <string name="app_name">wifi Controller</string>
     <string name="title_activity_option_sel_dialog">OptionSelDialog</string>
     <string name="Help">
         This Application is Useful for controlling the use of mobile/internet by the Kids.
