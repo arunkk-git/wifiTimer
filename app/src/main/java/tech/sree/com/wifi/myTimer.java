@@ -14,7 +14,7 @@ import java.util.Calendar;
 public class myTimer extends AppCompatActivity {
     TimePicker timerON ,timerOFF ;
     EditText password;
-    String  Pass_word = "ARUN123";
+    String  Pass_word = "wIfI";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +25,7 @@ public class myTimer extends AppCompatActivity {
         password = (EditText) findViewById(R.id.password);
     }
     public void getTimeData(View V){
-        if (true || password.getText().toString().equals(Pass_word))
+        if ( password.getText().toString().equals(Pass_word))
         getAlarmTimeInfo();
         else
         Toast.makeText(this,"Wrong ENter !!! Need to check password",Toast.LENGTH_LONG).show();

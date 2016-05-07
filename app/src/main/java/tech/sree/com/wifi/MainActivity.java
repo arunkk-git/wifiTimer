@@ -90,16 +90,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-   public void setLockPassword(View V){
-       if(V.getId() ==  R.id.wifi_pass_lock){
-
-       }
-
-       if(V.getId() ==  R.id.wifi_pass_unlock){
-
-       }
-
-   }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
