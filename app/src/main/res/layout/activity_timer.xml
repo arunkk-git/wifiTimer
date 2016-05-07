@@ -9,9 +9,17 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="#abc"
     tools:context=".myTimer">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#d70bed"
+        android:id="@+id/password"
+        android:hint="Enter Password to change Time "
+        />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/password"
         android:textAppearance="?android:textAppearanceLarge"
         android:textColor="#FF0000"
         android:text="TurnOff Wifi "
