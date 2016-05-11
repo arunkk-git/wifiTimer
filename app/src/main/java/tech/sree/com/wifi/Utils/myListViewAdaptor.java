@@ -3,7 +3,9 @@ package tech.sree.com.wifi.Utils;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
+import tech.sree.com.wifi.MainActivity;
 import tech.sree.com.wifi.R;
 import tech.sree.com.wifi.myTimer;
 
@@ -68,7 +73,18 @@ public class myListViewAdaptor extends ArrayAdapter<String> {
             viewHolder = (myViewHolder) row.getTag();
             viewHolder.r_imageView.setImageResource(myImages[0]);
             viewHolder.r_title.setText("  " + "  " + myTitle[position]);
-            viewHolder.r_desc.setText("  " + "  " + myDesc[position]);
+
+            ArrayList<Integer> myarray_list = MainActivity.getInstance().getMyTimeSettings();
+
+            if (myarray_list != null)
+            {
+                viewHolder.r_desc.setText("From : " + " " +  myarray_list.toString());
+                Log.d("ARUN", "From : " + " " +  myarray_list.toString());
+            }
+            else {
+                Log.d("ARUN", " in list view mySharedpreferences is null");
+                viewHolder.r_desc.setText("  " + "  " + myDesc[position]);
+            }
         }
         viewHolder.r_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,7 +92,7 @@ public class myListViewAdaptor extends ArrayAdapter<String> {
                 Intent intent =  new Intent(context ,myTimer.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
-          //      Toast.makeText(context, "Button Clicked+" + position, Toast.LENGTH_LONG).show();
+                //      Toast.makeText(context, "Button Clicked+" + position, Toast.LENGTH_LONG).show();
             }
         });
         return row;

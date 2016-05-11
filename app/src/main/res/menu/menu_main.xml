@@ -3,12 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="tech.sree.com.mobiads.MainActivity">
     <item
-
         android:id="@+id/action_help"
-
-        android:title="Help"
-        android:icon="@drawable/wifi0"
+        android:title="How To "
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_password"
+        android:title="Pass Word"
+        app:showAsAction="never" />
+
     <item
         android:id="@+id/action_about"
         android:title="About"

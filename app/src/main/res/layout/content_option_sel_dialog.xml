@@ -12,23 +12,23 @@
     tools:context="tech.sree.com.wifi.OptionSelDialog"
     >
     <TextView
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/Option"
         android:text="Dailog"
-        android:textColor="#ee0cf5"
         android:textAppearance="?android:textAppearanceMedium"
         android:layout_alignParentTop="true"
          />
-
-    <Button
+    <TextView
         android:layout_width="wrap_content"
+        android:textAppearance="?android:textAppearanceLarge"
         android:layout_height="wrap_content"
-        android:text="Thanks :-)"
-        android:id="@+id/exit"
-        android:layout_below="@+id/Option"
+        android:textStyle="bold"
+        android:textColor="#030bfd"
+        android:text="OKey"
         android:onClick="exitDialog"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/Option"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

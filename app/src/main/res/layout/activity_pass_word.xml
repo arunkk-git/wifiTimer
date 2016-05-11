@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="tech.sree.com.wifi.PassWord">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/msg"
+    android:textAppearance="?android:textAppearanceLarge"
+    android:text="To Change/Modify PassWord"/>
+
+    <EditText
+
+        android:layout_below="@id/msg"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/curPass"
+        android:inputType="textPassword"
+        android:hint="Enter Current PassWord"/>
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/curPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/newPass1"
+        android:inputType="textPassword"
+        android:hint="Enter New PassWord"/>
+
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/newPass1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/newPass2"
+        android:inputType="textPassword"
+        android:hint="Confirm New PassWord"/>
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/newPass2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/email"
+        android:inputType="textEmailAddress"
+        android:hint="Enter E-mail PassWord"/>
+    <Button
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/passBtn"
+        android:onClick="validatePassWord"
+        android:text="Update New PassWord"/>
+
+</RelativeLayout>

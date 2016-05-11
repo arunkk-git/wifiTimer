@@ -12,7 +12,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,20 +23,31 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".WifiStatusChangeNotifier"  android:enabled="true">
-        <intent-filter>
-            <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-            <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
-        </intent-filter>
+        <receiver
+            android:name=".WifiStatusChangeNotifier"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+            </intent-filter>
         </receiver>
 
-        <activity android:name=".WifiController"></activity>
-
-        <activity android:name=".myTimer"></activity>
+        <activity
+            android:name=".WifiController"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".myTimer"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".OptionSelDialog"
-            android:label="@string/title_activity_option_sel_dialog"
-            android:theme="@style/Theme.AppCompat.Dialog"></activity>
+            android:theme="@style/Theme.AppCompat.Dialog" />
+
+        <activity android:name=".PassWord"
+            android:theme="@style/Theme.AppCompat.Dialog">
+
+        </activity>
     </application>
 
 </manifest>

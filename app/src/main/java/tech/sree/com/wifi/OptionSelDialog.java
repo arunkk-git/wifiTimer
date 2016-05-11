@@ -14,7 +14,8 @@ public   TextView optionsTextView ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle("");
+        setTitle("Wifi-Controller");
+
         Log.d("ARUN", "OptionSelDialog OnCreate");
         setContentView(R.layout.content_option_sel_dialog);
         String textinfo = getIntent().getExtras().getString("data");
