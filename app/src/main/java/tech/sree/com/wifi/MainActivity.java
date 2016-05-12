@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private  String[] description =  null;
     private int[] logo = {R.drawable.wifi1,};
     private myListViewAdaptor adaptor =  null;
+private String defaultPassWord = "WIFI";
     /* ----------------------------SharedPreferences----------------------------*/
     private SharedPreferences mySharedpreferences = null ;
     private String MyPREFERENCES = "mySettigns";
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     final String onTimeH = "onTimeHour", onTimeM = "onTimeMinute";
     final String passWord="passWord";
     /* ----------------------------SharedPreferences----------------------------*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 /* ----------------------------SharedPreferences----------------------------*/
 
         setTitle("Wifi scheduler");
-        setNewPassWord("WIFI");
+        setNewPassWord(defaultPassWord,false);
         setInstance(this);
         initListView();
 
@@ -62,20 +64,18 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Integer> OffOnTime= null; //= new ArrayList<Integer>(Arrays.asList(0,0,0,0));
 
     public  ArrayList<Integer> getOffOnTime() {
-        //if (setAlaramTimer)
-        Log.d("ARUN", "GetOffOnTime");
+
         return  OffOnTime ;
     }
 
     private void setOffOnTime(ArrayList<Integer> offONTime) {
-        Log.d("ARUN","setOffOnTime");
         setAlaramTimer = true ;
         if(OffOnTime ==  null)
             OffOnTime= new ArrayList<Integer>(Arrays.asList(0,0,0,0));
         OffOnTime = offONTime ;
     }
     public void setNewListViewInfo(ArrayList<Integer> arrayList) {
-        Log.d("ARUN", "setNewListViewInfo");
+       // Log.d("ARUN", "setNewListViewInfo");
 
         setMyTimeSettings(arrayList);
         setOffOnTime(arrayList);
@@ -103,9 +103,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Log.d("ARUN", "onOptionsItemSelected");
-
-
         switch (item.getItemId()) {
 
             case R.id.action_help:
@@ -152,21 +149,32 @@ public class MainActivity extends AppCompatActivity {
     private static void setInstance(MainActivity instance) {MainActivity.instance = instance;}
 
     private static String presentPassword;
-    public  void setNewPassWord(String newpwd){
-
-        SharedPreferences.Editor editor = mySharedpreferences.edit();
-        editor.putString(passWord,newpwd);
-        editor.commit();
-        presentPassword = newpwd;
+    public  void setNewPassWord(String newpwd, boolean fromMySetting /* 0 -> onCreate 1 -> savedSettings */){
+Log.d("ARUN","setNewPassWord :  "+fromMySetting+"  newpwd  = "+newpwd);
+        if( fromMySetting) {
+/* ----------------------------SharedPreferences----------------------------*/
+            SharedPreferences.Editor editor = mySharedpreferences.edit();
+            editor.putString(passWord, newpwd);
+            editor.commit();
+        /* ----------------------------SharedPreferences----------------------------*/
+            presentPassword = newpwd;
+        }else {
+            String passwd = mySharedpreferences.getString(passWord, defaultPassWord);
+            Log.d("ARUN","mySharedpreferences passwd "+passwd);
+            presentPassword = passwd;
+        }
     }
+
     public  String getpresentPassword(){
+        /* ----------------------------SharedPreferences----------------------------*/
         String passwd = mySharedpreferences.getString(passWord, "WIFI");
         if(passwd != "WIFI")
             return passwd;
         else
+        /* ----------------------------SharedPreferences----------------------------*/
             return presentPassword ;
     }
-
+    /* ----------------------------SharedPreferences----------------------------*/
     public SharedPreferences getMygetSharedPreferences(){
 
         return mySharedpreferences;
@@ -190,8 +198,6 @@ public class MainActivity extends AppCompatActivity {
         myarrayList.set(1, mySharedpreferences.getInt(offTimeM,0));
         myarrayList.set(2, mySharedpreferences.getInt(onTimeH,0));
         myarrayList.set(3, mySharedpreferences.getInt(onTimeM, 0));
-
-        Log.d("ARUN", "myarray_list = " + myarrayList.toString());
 
         return myarrayList;
 

@@ -79,10 +79,10 @@ public class myListViewAdaptor extends ArrayAdapter<String> {
             if (myarray_list != null)
             {
                 viewHolder.r_desc.setText("From : " + " " +  myarray_list.toString());
-                Log.d("ARUN", "From : " + " " +  myarray_list.toString());
+             //   Log.d("ARUN", "From : " + " " +  myarray_list.toString());
             }
             else {
-                Log.d("ARUN", " in list view mySharedpreferences is null");
+               // Log.d("ARUN", " in list view mySharedpreferences is null");
                 viewHolder.r_desc.setText("  " + "  " + myDesc[position]);
             }
         }

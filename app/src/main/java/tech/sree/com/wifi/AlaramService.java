@@ -28,7 +28,6 @@ public class AlaramService {
     }
 
     public void set_AlarmtoContorl(String toContorl) {
-        Log.d("ARUN", "set_Timer");
         int hour = 0;
         int minute = 0;
 
@@ -38,9 +37,11 @@ public class AlaramService {
 
         futureDateON.set(Calendar.HOUR_OF_DAY, OnTimeHour);
         futureDateON.set(Calendar.MINUTE, OnTimeMinuts);
+        futureDateON.set(Calendar.SECOND,10);
 
         futureDateOFF.set(Calendar.HOUR_OF_DAY, OffTimeHour);
         futureDateOFF.set(Calendar.MINUTE, OffTimeMinuts);
+        futureDateOFF.set(Calendar.SECOND,5);
 
         if (toContorl == "WIFI") {
             Log.d("ARUN","WIFI toContorl");
@@ -51,8 +52,8 @@ public class AlaramService {
 
             PendingIntent piON = PendingIntent.getActivity(MainActivity.getInstance(), 2, intentON, PendingIntent.FLAG_CANCEL_CURRENT);
             AlarmManager amON = (AlarmManager) MainActivity.getInstance().getSystemService(context.ALARM_SERVICE);
+//            amON.set(AlarmManager.RTC_WAKEUP, futureDateON.getTimeInMillis(), piON);
             amON.set(AlarmManager.RTC_WAKEUP, futureDateON.getTimeInMillis(), piON);
-
 
             Intent intentOFF = new Intent(MainActivity.getInstance(), WifiController.class);
             intentOFF.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

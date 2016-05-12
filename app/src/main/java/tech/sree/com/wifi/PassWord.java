@@ -29,7 +29,7 @@ public class PassWord extends AppCompatActivity {
             Toast.makeText(this, "Enter the proper Email Id ", Toast.LENGTH_LONG).show();
         } else if (currPwd.getText().toString().equals(MainActivity.getInstance().getpresentPassword())
                 && newPwd.getText().toString().equals(confirmPwd.getText().toString())) {
-            MainActivity.getInstance().setNewPassWord(confirmPwd.getText().toString());
+            MainActivity.getInstance().setNewPassWord(confirmPwd.getText().toString(),true);
             String[] Emails = {email.getText().toString(),""};
             sendEmail(confirmPwd.getText().toString(), Emails);
             finish();
